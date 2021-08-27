@@ -7,6 +7,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'Bottomnav.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +20,7 @@ Future<void> main() async {
       scaffoldBackgroundColor: Colors.black,
     ),
     home: Scaffold(
-      body: HomeScreen(),
+      body: MyBottomBarDemo(),
     ),
   ));
 }

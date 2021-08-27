@@ -44,8 +44,9 @@ class _MyBottomBarDemoState extends State<MyBottomBarDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.white70,
+        backgroundColor: Colors.black,
         onTap: onTabTapped,
+        height: 50,
         // backgroundColor: Colors.white,
         items: [
           Icon(Icons.home),

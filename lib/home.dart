@@ -106,24 +106,6 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
         ),
-        bottomNavigationBar: CurvedNavigationBar(
-          height: 50,
-          // backgroundColor: Colors.blue,
-          backgroundColor: Colors.black,
-          items: [
-            Icon(Icons.home),
-            Icon(Icons.search),
-            Icon(Icons.settings),
-          ],
-          onTap: (index) {
-            if (index == 1) {
-              setState(() {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => search()));
-              });
-            }
-          },
-        ),
         body: ListView(
           children: [
             SizedBox(
