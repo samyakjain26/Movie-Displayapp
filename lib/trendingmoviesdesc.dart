@@ -261,6 +261,13 @@ class _DescriptionState extends State<Description> {
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
                                 child: InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                Description(similar, index)));
+                                  },
                                   child: Container(
                                       height:
                                           MediaQuery.of(context).size.height /

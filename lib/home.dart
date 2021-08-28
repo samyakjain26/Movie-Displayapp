@@ -26,22 +26,12 @@ class _HomeScreenState extends State<HomeScreen> {
   List Upcoming = [];
   List recommended = [];
 
-  Future<String> readResponse(response) {
-    final completer = Completer<String>();
-    final contents = StringBuffer();
-    response.transform(utf8.decoder).listen((data) {
-      contents.write(data);
-    }, onDone: () => completer.complete(contents.toString()));
-    return completer.future;
-  }
-
   final token =
       "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZWZiNDJkYmRiNTY3NDE4N2ViNWQ2ODlhZDhkZTE1OSIsInN1YiI6IjYxMjEzOGIyMzg3NjUxMDA3MzE4MTM3MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.w9NaPqE5L2uf_TKdXPhmQq7QOS5lRYA4QJK_QW65uC8";
   loadmovies() async {
     https: //api.themoviedb.org/3/movie/550?api_key={api_key}&callback=test
     String url1 = SERVER_URL() + "trending/all/day?api_key=${api}";
     var res = await http.get(Uri.parse(url1));
-
     var json1 = json.decode(res.body);
 
     String url2 =
@@ -290,6 +280,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
                               child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              Description(toprated, index)));
+                                },
                                 child: Container(
                                     height: MediaQuery.of(context).size.height /
                                         3.92,
@@ -335,6 +332,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
                               child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              Description(Upcoming, index)));
+                                },
                                 child: Container(
                                     height: MediaQuery.of(context).size.height /
                                         3.92,
