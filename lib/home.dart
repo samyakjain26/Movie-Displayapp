@@ -285,7 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              Description(toprated, index)));
+                                              Description(tvseries, index)));
                                 },
                                 child: Container(
                                     height: MediaQuery.of(context).size.height /
